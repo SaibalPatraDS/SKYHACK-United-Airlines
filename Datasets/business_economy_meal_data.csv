@@ -1,0 +1,8 @@
+meal_group,meal_category,entree_description,is_entree,planned_entree_count,consumed_entree_count,consumption_rate,pre_order_qty
+ENTREES COLD,CHEESE,Classic selection cheese tray,Y,9157,3367,36.76968439,896
+ENTREES HOT,VEGETARIAN,Mediterranean Falafel Bowl,Y,7426,1402,18.87961217,4154
+ENTREES HOT,POULTRY,Chicken breast entree,Y,13661,7966,58.31198302,1919
+ENTREES HOT,VEGETARIAN,Vegetarian entree,Y,2352,1165,49.53231293,409
+ENTREES HOT,BREAKFAST,Protein egg entree,Y,1393,643,46.15936827,158
+ENTREES HOT,BREAKFAST,Savory breakfast entree,Y,740,353,47.7027027,134
+UNITED CATERER OWNED 88-3F,SNACKS,Tapas,N,2515,2037,80.99403579,156
