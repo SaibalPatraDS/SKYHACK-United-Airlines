@@ -269,12 +269,20 @@ Finally save the data to csv file further use.
 
 
 
+**Best meal description for both Business/First Class as well as for the Pre-Order(Economy class)**
+
+![image](https://github.com/SaibalPatraDS/SKYHACK-United-Airlines/assets/102281722/da0be0aa-b8bc-435d-a45c-f57e69bd4de3)
 
 
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 
+**Finding the best meal and its consumption ratio and no of times it was ordered**
 
+![image](https://github.com/SaibalPatraDS/SKYHACK-United-Airlines/assets/102281722/190190aa-45ea-42eb-ab0d-f602db28d082)
 
-
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 
 
 
