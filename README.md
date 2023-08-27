@@ -293,6 +293,180 @@ Finally save the data to csv file further use.
 
 
 
+6. In file_0006.ipynb I have tried bi-grams, tri-grams, tera-grams and used rake_nltk library to extract the keywords from the customer comments.
+
+   1. I have merged all four tables
+   
+  ![image](https://github.com/SaibalPatraDS/SKYHACK-United-Airlines/assets/102281722/b74e6b34-826f-4d02-a955-0f8ff8922caf)
+
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+
+   2. I have analysed the comments,
+ ```python
+      import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
+import string
+
+# Download the NLTK stopwords if you haven't already
+nltk.download('stopwords')
+nltk.download('punkt')
+
+# Initialize the Porter Stemmer
+stemmer = PorterStemmer()
+
+## list of all words
+list_of_words_before_stemming = []
+list_of_words_after_stemming = []
+
+# Define a function to process sentences
+def process_sentence(sentence):
+    # Tokenize the sentence into words
+    words = word_tokenize(sentence)
+
+    # Define a list of English stopwords and punctuation
+    stop_words = set(stopwords.words('english'))
+    punctuation = set(string.punctuation)
+
+    # Remove stopwords and punctuation
+    filtered_words_before_stemming = [word for word in words if word.lower() not in stop_words and word not in punctuation]
+    
+    #stemming and removing stopwords and punctuations
+    filtered_words_after_stemming = [stemmer.stem(word) for word in words if word.lower() not in stop_words and word not in punctuation]
+    
+    ## storing all words for furthur use
+    list_of_words_after_stemming.extend(filtered_words_after_stemming)
+    
+    ## storing all words for furthur use
+    list_of_words_before_stemming.extend(filtered_words_before_stemming)
+    
+    # Join the filtered words back into a sentence
+    filtered_sentence = ' '.join(filtered_words_after_stemming)
+
+    return filtered_sentence
+
+# summer_comments['verbatim_filter_text'] = []
+## storing all comments after stemming and cleaning
+filtered_sentence = []
+
+# Process each sentence
+for sentence in data['verbatim_text']:
+    filter_sentence = process_sentence(sentence)
+#     summer_comments['verbatim_filter_text'].append(filtered_sentence)
+    filtered_sentence.append(filter_sentence)
+    
+    
+## Now, remove duplicates from filtered_sentence
+updated_filtered_sentence = list(set(filtered_sentence))
+
+# Print the unique filtered sentences
+# for sentence in filtered_sentence:
+#     print(sentence)
+```
+   3. Extracting keywords
+
+```python
+'''
+keywords are those, found in previous results
+like meal_category, meal_group, entree_description
+'''
+
+
+## loading multiple data files
+
+business_class_dishes_with_good_perct_consumption = pd.read_csv("Datasets/business_class_dishes_with_good_perct_consumption.csv")
+business_class_dishes_with_good_perct_consumption
+
+# second file
+business_economy_meal_data = pd.read_csv("Datasets/business_economy_meal_data.csv")
+business_economy_meal_data
+
+# ## third file
+economy_best_meal_group_entree_category = pd.read_csv("Datasets/economy_best_meal_group_entree_category.csv")
+economy_best_meal_group_entree_category 
+```
+
+4. Counting of teragrams
+
+```python
+## counting of tera-grams
+
+# Generate trigrams from the list of words
+teragrams = list(ngrams(list_of_words_before_stemming, 4)) 
+
+# Count the occurrences of each teragram that contains a keyword
+teragram_counts = Counter(teragram for teragram in teragrams if any(str.lower(keyword) in teragram for keyword in keywords))
+
+# Sort the teragram counts in descending order
+sorted_teragram_counts = sorted(teragram_counts.items(), key=lambda x: x[1], reverse=True)
+
+# # Calculate the total number of trigrams
+# total_teragrams = len(teragrams)
+
+# # Calculate the percentile threshold (e.g., 50% of the total trigrams)
+# percentile_threshold = total_teragrams * 0.10
+
+# # Initialize variables for accumulating trigrams
+# accumulated_teragrams = []
+# accumulated_count = 0
+
+# # Iterate through sorted trigram counts until reaching the percentile threshold
+# for teragram, count in sorted_teragram_counts:
+#     accumulated_trigrams.append((teragram, count))
+#     accumulated_count += count
+#     if accumulated_count >= percentile_threshold:
+#         break
+
+# Print the top 50 percentile teragrams and their counts
+for teragram, count in sorted_teragram_counts[:100]:
+    print(f'{teragram} : {count}') 
+```
+
+
+
+5. Count of Words
+
+```python
+## importing packages
+from collections import Counter
+
+##counting occurance of every words
+word_counts = Counter(list_of_words_before_stemming)
+
+# Sort the word counts in descending order
+sorted_word_counts = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)
+
+# Calculate the total number of words
+total_words = len(list_of_words_before_stemming)
+
+# Calculate the percentile threshold (e.g., 50% of the total words)
+percentile_threshold = total_words * 0.5
+
+# Initialize variables for accumulating words
+accumulated_words = []
+accumulated_count = 0
+
+# Iterate through sorted word counts until reaching the percentile threshold
+for word, count in sorted_word_counts:
+    accumulated_words.append((word, count))
+    accumulated_count += count
+    if accumulated_count >= percentile_threshold:
+        break
+
+# Print the top 50 percentile words and their counts
+for word, count in accumulated_words[:50]:
+    print(f'{word}: {count}')
+```
+
+6. Extracting necessary columns
+
+
+![image](https://github.com/SaibalPatraDS/SKYHACK-United-Airlines/assets/102281722/86688940-5695-476d-bad3-f53d8cb0e3ae)
+
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 ## Methodology: Thinking Outside the Box for Traveler Satisfaction
 
