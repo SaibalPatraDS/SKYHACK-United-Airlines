@@ -190,6 +190,7 @@ Dissatisfied Word Cloud
 
 
 
+4. 
 
 
 
@@ -198,8 +199,25 @@ Dissatisfied Word Cloud
 
 
 
+## Methodology: Thinking Outside the Box for Traveler Satisfaction
+
+In the quest to understand traveler preferences, it's clear that not all food options are created equal. Travelers aren't universally dissatisfied; they're seeking something specific. The trend toward health-conscious choices is evident, as passengers look for healthier and tastier alternatives to traditional snacks. United Airlines has faced criticism for serving late or minimal snacks on long-haul flights, leaving passengers hungry for quality options.
+
+**How Did I Uncover These Insights?**
+I began by identifying the most frequently pre-ordered and consumed products in both business and economy class. If passengers are consistently choosing these items, there must be compelling reasons behind their choices. To uncover these reasons, I delved into customer comments for top-rated products.
+
+Additionally, I analyzed feedback from dissatisfied passengers to pinpoint their grievances and proposed potential solutions.
 
 
+Our solution aims to address the following key areas of improvement:
+
+Healthier Snacking Options: We will introduce a range of healthier snack choices that cater to passengers' increasing concern for well-being. This includes low-calorie, nutritious, and flavorful options.
+Enhanced Long-Haul Food Service: Passengers on long-haul flights can expect an improved dining experience. We will ensure that meal options are not only satisfying but also timed appropriately to prevent hunger during the journey.
+Vegetarian and Varied Choices: The menu will see an expansion in vegetarian and diverse meal selections to cater to a wider range of preferences.
+Quality Over Quantity: Our focus will be on delivering high-quality food items that passengers genuinely enjoy, reducing waste and improving overall satisfaction.
+Customer Feedback Integration: We will establish a system for actively gathering and incorporating customer feedback to continually refine our offerings.
+Marketing Initiatives: Launch marketing campaigns highlighting meal combos and enticing options to boost pre-orders.
+By addressing these areas, our solution aims to elevate the overall in-flight dining experience and boost passenger satisfaction.
 
 
 
