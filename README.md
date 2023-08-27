@@ -1,4 +1,4 @@
-# SKYHACK-United-Airlines
+# SKYHACK United Airlines
 
 ![image](https://github.com/SaibalPatraDS/SKYHACK-United-Airlines/assets/102281722/fde01eee-1d2c-42af-b272-34445b3d53f2)
 
